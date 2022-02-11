@@ -77,7 +77,7 @@
 
 - Hashing
 
-<img src="./DOCS/img/hash.png" alt="" width="70%"/>
+<img src="./DOCS/img/Hash.png" alt="" width="70%"/>
 
 <br>
 <br>
