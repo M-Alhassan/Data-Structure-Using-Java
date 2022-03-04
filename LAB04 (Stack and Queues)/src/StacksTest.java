@@ -1,25 +1,31 @@
-// a program to check if a string is palidrome using stacks 
-// (a palindrome is  a word that is the same as it's reverse)
 import java.util.Scanner;
-import java.util.Stack;
 
 public class StacksTest {
 	public static void main(String[] args) {
-		Scanner kb = new Scanner(System.in);
-		Stack stack = new Stack();
-		Stack stackDuplicate = new Stack();
-		Stack stack2 = new Stack();
-		System.out.print("Enter a string: ");
-		String str = kb.nextLine();
-		for(int i = 0; i < str.length(); i++) {
-			stack.push(str.charAt(i));
-			stackDuplicate.push(str.charAt(i));
+		LabStack<String> s = new LabStack<String>();
+		s.push("3");
+		s.push("5");
+		s.push("hi");
+		while(!s.isEmpty()) {
+			System.out.print(s.pop() + " ");
 		}
-		for(int i = 0; i < str.length(); i++) {
-			stack2.push(stack.pop());
+		
+		s.clear(); //Empty the contents of the stack
+		
+		System.out.println("\nHere's how I reverse a string: ");
+		Scanner k = new Scanner(System.in);
+		System.out.print("Enter a string> ");
+		String input = k.nextLine();
+		
+		for(int i = 0; i < input.length(); i++)
+			s.push(input.charAt(i) + "");
+			
+		System.out.println("The reversed string is: ");
+		while(!s.isEmpty()) {
+			System.out.print(s.pop());
 		}
-		System.out.println(stack2);
-		System.out.println(stackDuplicate);
-		System.out.println(stackDuplicate.toString().equals(stack2.toString()));
+		
+		System.out.println();
+		
 	}
 }
